@@ -73,7 +73,7 @@ const HomePage: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/signup?role=client">
+              <Link to="/dashboard/client">
                 <Button 
                   size="lg" 
                   className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg"

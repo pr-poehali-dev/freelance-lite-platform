@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useAuth } from '@/contexts/AuthContext';
+import DashboardLayout from '@/components/DashboardLayout';
 import Icon from '@/components/ui/icon';
 
 const ClientDashboard: React.FC = () => {
@@ -14,12 +15,15 @@ const ClientDashboard: React.FC = () => {
   }
 
   return (
-    <Routes>
-      <Route path="/" element={<ClientDashboardHome />} />
-      <Route path="/tasks" element={<ClientTasks />} />
-      <Route path="/create-task" element={<CreateTask />} />
-      <Route path="/profile" element={<ClientProfile />} />
-    </Routes>
+    <DashboardLayout>
+      <Routes>
+        <Route path="/" element={<ClientDashboardHome />} />
+        <Route path="/tasks" element={<ClientTasks />} />
+        <Route path="/create-task" element={<CreateTask />} />
+        <Route path="/messages" element={<ClientMessages />} />
+        <Route path="/profile" element={<ClientProfile />} />
+      </Routes>
+    </DashboardLayout>
   );
 };
 
@@ -232,6 +236,13 @@ const CreateTask: React.FC = () => (
   <div className="container mx-auto px-4 py-8">
     <h1 className="text-2xl font-bold mb-6">Создать новую задачу</h1>
     <p className="text-muted-foreground">Форма создания задачи в разработке...</p>
+  </div>
+);
+
+const ClientMessages: React.FC = () => (
+  <div className="container mx-auto px-4 py-8">
+    <h1 className="text-2xl font-bold mb-6">Сообщения</h1>
+    <p className="text-muted-foreground">Страница сообщений в разработке...</p>
   </div>
 );
 
